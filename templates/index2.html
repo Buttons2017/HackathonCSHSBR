@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separate Inputs</title>
+</head>
+<body>
+    <h1>Energy Consumption per Day</h1>
+
+    <h3>Lights</h3>
+    <form method="POST">
+        <label for="lightCount">Enter light count, hours used, per day:</label>
+        <input type="number" id="lightCount" name="lightCount" placeholder="# of lights" required>
+        <input type="number" id="lightHours" name="lightHours" placeholder="Hours used" required>
+        <button type="submit" name="text_submit_button">Submit Text</button>
+    </form>
+    <p>Kilowatt hours used: {{ kWHlights }}</p>
+
+
+    <h3>Dishwasher</h3>
+    <form method="POST">
+        <label for="dishwasher">Enter dishwasher hours used, per day:</label>
+        <input type="number" step=".1" id="dishwasher" name="dishwasher" placeholder="Hours used" required>
+        <button type="submit" name="text_submit_button">Submit Text</button>
+    </form>
+    <p>Kilowatt hours used: {{ dishwasher }}</p>
+
+
+    <h3>TV</h3>
+    <form method="POST">
+        <label for="tv">Enter TV hours used, per day:</label>
+        <input type="number" step=".1" id="tv" name="tv" placeholder="Hours used" required>
+        <button type="submit" name="text_submit_button">Submit Text</button>
+    </form>
+    <p>Kilowatt hours used: {{ tv }}</p>
+
+    <h3>Electric Oven</h3>
+    <form method="POST">
+        <label for="oven">Enter oven hours used, per day:</label>
+        <input type="number" step=".1" id="oven" name="oven" placeholder="Hours used" required>
+        <button type="submit" name="text_submit_button">Submit Text</button>
+    </form>
+    <p>Kilowatt hours used: {{ oven }}</p>
+
+
+</body>
+</html>
