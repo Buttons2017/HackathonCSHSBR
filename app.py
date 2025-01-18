@@ -38,6 +38,14 @@ def index():
             tv = round(0.05*float(request.form.get('tv', '')),1)
         elif 'oven' in request.form:
             oven = round(4*float(request.form.get('oven', '')),1)
+        elif 'fridge' in request.form:
+            fridge = round(0.05 * float(request.form.get('fridge', '')), 1)
+        elif 'laundry' in request.form:
+            laundry = round(1.5 * float(request.form.get('laundry', '')), 1)
+        elif 'dryer' in request.form:
+            dryer = round(4.5 * float(request.form.get('dryer', '')), 1)
+
+
 
     return render_template('index2.html', counter=counter, lightCount=lightCount, lightHours=lightHours,
                            kWHlights=kWHlights, dishwasher=dishwasher, tv=tv, oven=oven)
