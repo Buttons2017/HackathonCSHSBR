@@ -59,8 +59,8 @@
             <h3>Lights</h3>
             <form method="POST">
                 <label for="lightCount">Enter light count, hours used, per day:</label>
-                <input type="number" id="lightCount" name="lightCount" placeholder="# of lights" required>
-                <input type="number" id="lightHours" name="lightHours" placeholder="Hours used" required>
+                <input type="number" min="0" id="lightCount" name="lightCount" placeholder="# of lights" required>
+                <input type="number" min="0" id="lightHours" name="lightHours" placeholder="Hours used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Kilowatt hours used: {{ kWHlights }}</p>
@@ -68,7 +68,7 @@
             <h3>Dishwasher</h3>
             <form method="POST">
                 <label for="dishwasher">Enter dishwasher hours used, per day:</label>
-                <input type="number" step=".1" id="dishwasher" name="dishwasher" placeholder="Hours used" required>
+                <input type="number" min="0" step=".1" id="dishwasher" name="dishwasher" placeholder="Hours used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Kilowatt hours used: {{ dishwasher }}</p>
@@ -76,7 +76,7 @@
             <h3>TV</h3>
             <form method="POST">
                 <label for="tv">Enter TV hours used, per day:</label>
-                <input type="number" step=".1" id="tv" name="tv" placeholder="Hours used" required>
+                <input type="number" step=".1" min="0" id="tv" name="tv" placeholder="Hours used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Kilowatt hours used: {{ tv }}</p>
@@ -84,7 +84,7 @@
             <h3>Electric Oven</h3>
             <form method="POST">
                 <label for="oven">Enter oven hours used, per day:</label>
-                <input type="number" step=".1" id="oven" name="oven" placeholder="Hours used" required>
+                <input type="number" min="0" step=".1" id="oven" name="oven" placeholder="Hours used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Kilowatt hours used: {{ oven }}</p>
@@ -94,7 +94,7 @@
             <h3>Fridge</h3>
             <form method="POST">
                 <label for="oven">Enter number of fridges:</label>
-                <input type="number" step="1" id="fridge" name="fridge" placeholder="Hours used" required>
+                <input type="number" min="0" step="1" id="fridge" name="fridge" placeholder="Hours used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Kilowatt hours used: {{ fridge }}</p>
@@ -102,7 +102,7 @@
             <h3>Laundry Machine</h3>
             <form method="POST">
                 <label for="laundry">Enter laundry machine hours used, per week:</label>
-                <input type="number" step=".1" id="laundry" name="laundry" placeholder="Hours used" required>
+                <input type="number" min="0" step=".1" id="laundry" name="laundry" placeholder="Hours used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Kilowatt hours used: {{ laundry }}</p>
@@ -119,7 +119,7 @@
             <h3>Dryer</h3>
             <form method="POST">
                 <label for="dryer">Enter dryer hours used, per week:</label>
-                <input type="number" step=".1" id="dryer" name="dryer" placeholder="Hours used" required>
+                <input type="number" min="0" step=".1" id="dryer" name="dryer" placeholder="Hours used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Kilowatt hours used: {{ dryer }}</p>
@@ -127,7 +127,7 @@
             <h3>Central AC</h3>
             <form method="POST">
                 <label for="centerAC">Enter central AC hours used, per day:</label>
-                <input type="number" step=".1" id="centerAC" name="centerAC" placeholder="Hours used" required>
+                <input type="number" min="0" step=".1" id="centerAC" name="centerAC" placeholder="Hours used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Kilowatt hours used: {{ centerAC }}</p>
@@ -135,8 +135,8 @@
             <h3>Window AC Units</h3>
             <form method="POST">
                 <label for="windowCount">Enter light count, hours used, per day:</label>
-                <input type="number" id="windowCount" name="windowCount" placeholder="# of units" required>
-                <input type="number" id="windowHours" name="windowHours" step="0.1" placeholder="Hours used" required>
+                <input type="number" min="0" id="windowCount" name="windowCount" placeholder="# of units" required>
+                <input type="number" min="0" id="windowHours" name="windowHours" step="0.1" placeholder="Hours used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Kilowatt hours used: {{ windowCost }}</p>
@@ -144,7 +144,7 @@
             <h3>Showers</h3>
             <form method="POST">
                 <label for="shower">Enter minutes showering, per day:</label>
-                <input type="number" step="1" id="shower" name="shower" placeholder="Minutes used" required>
+                <input type="number" step="1" min="0" id="shower" name="shower" placeholder="Minutes used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Gallons used: {{ shower }}</p>
@@ -152,7 +152,7 @@
             <h3>Sinks</h3>
             <form method="POST">
                 <label for="shower">Enter minutes of sinks running, per day:</label>
-                <input type="number" step="1" id="sink" name="sink" placeholder="Minutes used" required>
+                <input type="number" min="0" step="1" id="sink" name="sink" placeholder="Minutes used" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Gallons used: {{ sink }}</p>
@@ -160,7 +160,7 @@
             <h3>Toilets</h3>
             <form method="POST">
                 <label for="shower">Enter number of toilet flushes, per day:</label>
-                <input type="number" step="1" id="toilet" name="toilet" placeholder="Times flushed" required>
+                <input type="number" min="0" step="1" id="toilet" name="toilet" placeholder="Times flushed" required>
                 <button type="submit" name="text_submit_button">Submit Text</button>
             </form>
             <p>Gallons used: {{ toilet }}</p>
