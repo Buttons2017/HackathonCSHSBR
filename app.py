@@ -108,12 +108,16 @@ def index():
             feedback += 'Consider turning off window AC units when they aren\'t needed.\n'
 
         if tv/0.05 >= 8:
-            feedback += 'Please consider turning the TV off, going outside, and touching grass.'
+            feedback += 'Please consider turning the TV off, going outside, and touching grass.\n'
 
         if toilet/0.47 >= 100:
-            feedback += 'what are you doing to that toilet.'
+            feedback += 'what are you doing to that toilet.\n'
 
+        if fridge/(0.05*24) >= 5:
+            feedback += 'Do you really need 5 refrigerators??\n'
 
+        if feedback == '':
+            feedback += 'None!'
 
     return render_template('index2.html', counter=counter, lightCount=lightCount, lightHours=lightHours,
                            kWHlights=kWHlights, dishwasher=dishwasher, tv=tv, oven=oven, fridge=fridge, laundry=laundry,
