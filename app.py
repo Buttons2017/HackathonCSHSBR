@@ -29,13 +29,15 @@ shower = 0.0
 sink = 0.0
 toilet = 0.0
 totalKWH = 0.0
+totalGallons = 0.0
+totalWaterCost = 0.0
 
 # Define routes
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global counter, lightCount, lightHours, kWHlights, dishwasher, tv, oven, fridge, dryer, laundry, centerAC, \
-        windowCount, windowTime, windowCost, shower, sink, toilet, totalKWH, totalKWHC
+        windowCount, windowTime, windowCost, shower, sink, toilet, totalKWH, totalKWHC, totalGallons, totalWaterCost
     if request.method == 'POST':
         # Check which form was submitted
         if 'increment_button' in request.form:
@@ -72,10 +74,13 @@ def index():
         totalKWH = round(kWHlights+dishwasher+tv+oven+fridge+laundry+dryer+centerAC+windowCost+shower+sink+toilet,1)
         totalKWHC = round(totalKWH*0.17,2)
 
+        totalGallons = round(shower+sink+toilet,1)
+        totalWaterCost = round(totalGallons*(5/750),2)
+
     return render_template('index2.html', counter=counter, lightCount=lightCount, lightHours=lightHours,
                            kWHlights=kWHlights, dishwasher=dishwasher, tv=tv, oven=oven, fridge=fridge, laundry=laundry,
                            dryer=dryer, centerAC=centerAC, windowCost=windowCost, shower=shower, sink=sink, toilet=toilet,
-                           totalKWH=totalKWH, totalKWHC=totalKWHC)
+                           totalKWH=totalKWH, totalKWHC=totalKWHC, totalGallons=totalGallons, totalWaterCost=totalWaterCost)
 
 
 @app.route('/test')
